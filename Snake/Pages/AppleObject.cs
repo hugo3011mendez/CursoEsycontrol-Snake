@@ -4,8 +4,12 @@
     {
         public AppleObject(int x, int y)
         {
-            X = x;
-            Y = y;
+            PosX = x;
+            PosY = y;
+
+            // Se le establece un tamaño por defecto, las manzanas siempre serán del mismo tamaño
+            SizeX = 5;
+            SizeY = 5;
         }
     }
 }
