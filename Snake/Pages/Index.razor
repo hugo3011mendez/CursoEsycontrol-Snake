@@ -2,7 +2,9 @@
 
 <h1>Snake</h1>
 
-Welcome to your new app.
+Welcome to the Snake game. <br/>
+<div style="background-color:grey;width:@(mapa.Size)px;height:@(mapa.Size)px; display:inline-block; border:2px solid black;">
+</div>
 
 <EditForm Model="@mapa"> @* Form simple para que el usuario pueda establecer el tamaño del mapa *@
     Tamaño del mapa : <InputNumber @bind-Value="@mapa.Size" />
@@ -12,6 +14,4 @@ Welcome to your new app.
 
 @code{
     private MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 400px
-
-
 }
