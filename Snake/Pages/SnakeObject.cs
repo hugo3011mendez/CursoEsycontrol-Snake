@@ -7,8 +7,12 @@ namespace Snake.Pages
         
         public SnakeObject()
         {
-            X = 0;
-            Y = 0;
+            PosX = 0;
+            PosY = 0;
+
+            // Tamaño por defecto
+            SizeX = 4;
+            SizeY = 10;
         }
 
         public void moveUp(KeyboardEventArgs e)

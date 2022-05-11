@@ -2,14 +2,22 @@
 
 <h1>Snake</h1>
 
-Welcome to your new app.
+Welcome to the Snake game. <br/>
+
+@* Creo un div con estilos y el mismo tamaño que le damos al mapa *@
+<div style="background-color:grey;width:@(mapa.Size)px;height:@(mapa.Size)px; display:inline-block; border:2px solid black;">
+</div>
 
 <EditForm Model="@mapa"> @* Form simple para que el usuario pueda establecer el tamaño del mapa *@
-    Tamaño del mapa : <InputNumber @bind-Value="@mapa.Size" />
-    
-    <button type="submit" class="btn btn-primary btn-block confirm-button">Establecer</button>
+    <DataAnnotationsValidator></DataAnnotationsValidator> @* Añado el validador del formulario *@
+
+    Tamaño del mapa : <InputNumber @bind-Value="@mapa.Size" /> @* Para introducir el valor del tamaño del mapa *@
+    @* Muestro justo debajo, el mensaje de error si el tamaño del mapa está fuera del rango *@
+    <ValidationMessage For="@(()=>mapa.Size)"/>
+
+    <ValidationSummary/> @* Esta etiqueta hará que se muestre una lista de errores en el form *@
 </EditForm>
 
 @code{
-    private MapObject mapa = new();
+    private MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 400px
 }
