@@ -4,7 +4,6 @@
     {
 
         public int Velocidad { get; set; }
-        public int Longitud { get; set; }
         public int Nivel { get; set; }
         public int Puntos { get; set; }
 
@@ -12,7 +11,6 @@
         {
             Nivel = nivel;
             Velocidad = velocidad;
-            Longitud = 3;
             PosX = 0;
             PosY = 0;
 
