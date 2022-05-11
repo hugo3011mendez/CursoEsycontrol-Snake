@@ -7,5 +7,7 @@
 
         public int SizeX { get; set; } // Tamaño del prop en el eje X, en píxeles
         public int SizeY { get; set; } // Tamaño del prop en el eje Y, en píxeles
+
+        
     }
 }
