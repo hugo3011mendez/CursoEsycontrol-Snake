@@ -14,5 +14,26 @@
         {
             Size = 400;
         }
+
+        private void TableCreate(int Size)
+        {
+            string[,] names = new string[Size, Size];
+
+            for (int i = 0;i<names.Length;i++)
+            {
+
+                for (int z = 0; z < names.Length; z++)
+                {
+
+                    names[i,z] = " ";
+
+                }
+            }
+
+
+        }
+
+
+
     }
 }
