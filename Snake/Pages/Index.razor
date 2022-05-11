@@ -3,3 +3,13 @@
 <h1>Snake</h1>
 
 Welcome to your new app.
+
+<EditForm Model="@mapa"> @* Form simple para que el usuario pueda establecer el tamaño del mapa *@
+    Tamaño del mapa : <InputNumber @bind-Value="@mapa.Size" />
+    
+    <button type="submit" class="btn btn-primary btn-block confirm-button">Establecer</button>
+</EditForm>
+
+@code{
+    private MapObject mapa = new();
+}
