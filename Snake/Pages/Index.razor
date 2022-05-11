@@ -3,16 +3,33 @@
 <h1>Snake</h1>
 
 Welcome to the Snake game. <br/>
-<div style="background-color:grey;width:@(mapa.Size)px;height:@(mapa.Size)px; display:inline-block; border:2px solid black;">
+
+@* Creo un div con estilos y el mismo tamaño que le damos al mapa *@
+<div style="background-color:grey;width:@(_mapSize)px;height:@(_mapSize)px; display:inline-block; border:2px solid black;">
 </div>
 
-<EditForm Model="@mapa"> @* Form simple para que el usuario pueda establecer el tamaño del mapa *@
-    Tamaño del mapa : <InputNumber @bind-Value="@mapa.Size" />
-    
-    <button type="submit" class="btn btn-primary btn-block confirm-button">Establecer</button>
+<EditForm Model="@mapa" OnValidSubmit="MapOnValidSubmit" OnInvalidSubmit="MapOnInvalidSubmit"> @* Form simple para que el usuario pueda establecer el tamaño del mapa *@
+    <DataAnnotationsValidator></DataAnnotationsValidator> @* Añado el validador del formulario *@
+
+    Tamaño del mapa : <InputNumber @bind-Value="@mapa.Size" /> @* Para introducir el valor del tamaño del mapa *@
+    @* Muestro justo debajo, el mensaje de error si el tamaño del mapa está fuera del rango *@
+    <ValidationMessage For="@(()=>mapa.Size)"/>
 </EditForm>
 
 
 @code{
-    private MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 400px
+    private static MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 400px
+
+    private int @_mapSize = mapa.Size; // Al inicio de la página establezco el tamaño del contenero al tamaño del mapa
+
+    
+    private void MapOnInvalidSubmit() // En el caso de que el usuario haya introducido un valor inválido
+    {
+        mapa.Size = _mapSize; // Vuelvo a establecer el valor del tamaño del mapa a uno válido
+    }
+
+    private void MapOnValidSubmit() // En el caso de que el valor introducido sea uno válido
+    {
+        _mapSize = mapa.Size; // Actualizo la variable a ese valor y por lo tanto, se actualizará el tamaño del mapa
+    }
 }
