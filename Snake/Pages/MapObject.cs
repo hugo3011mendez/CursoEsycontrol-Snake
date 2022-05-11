@@ -14,5 +14,17 @@
         {
             Size = 400;
         }
+
+        private void TableCreate(int Size)
+        {
+            string[,] names = new string[Size, Size];
+
+
+
+
+        }
+
+
+
     }
 }
