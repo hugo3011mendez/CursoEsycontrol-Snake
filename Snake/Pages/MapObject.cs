@@ -15,7 +15,7 @@
             Size = 400;
         }
 
-        private void TableCreate(int Size)
+        public void TableCreate()
         {
             string[,] names = new string[Size, Size];
 
@@ -25,7 +25,7 @@
                 for (int z = 0; z < names.Length; z++)
                 {
 
-                    names[i,z] = " ";
+                    names[i,z] = "X";
 
                 }
             }

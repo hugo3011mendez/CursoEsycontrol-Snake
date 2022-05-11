@@ -3,8 +3,12 @@
     public class SnakeObject : Props
     {
 
-        public SnakeObject()
+        public int Velocidad { get; set; }
+        public int Longitud { get; set; }
+
+        public SnakeObject(int velocidad)
         {
+            Velocidad = velocidad;
             PosX = 0;
             PosY = 0;
 
