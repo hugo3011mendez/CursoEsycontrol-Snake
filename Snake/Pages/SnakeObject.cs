@@ -1,19 +1,12 @@
 ﻿namespace Snake.Pages
 {
-    public class SnakeObject
+    public class SnakeObject : Props
     {
-
-
-        public int X { get; set; } 
-        public int Y { get; set; } 
 
         public SnakeObject()
         {
-           
             X = 0;
             Y = 0;
         }
-
-
     }
 }
