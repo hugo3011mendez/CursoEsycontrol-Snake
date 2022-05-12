@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
+using System.ComponentModel.DataAnnotations;
 
 namespace Snake.Pages
 {
     public class SnakeObject : Props // Este objeto representa a la serpiente que el usuario controla en el juego
     {
         public int Velocidad { get; set; } // Para la velocidad a la que se mueve
+        [Range(1, 3)]
         public int Dificultad { get; set; } // Para el nivel de de dificultad
         public int Puntuacion { get; set; } // Indica la puntuación que tiene el jugador
 
@@ -28,35 +30,35 @@ namespace Snake.Pages
         {
             if (e.Key == "vbKeyUp")
             {
-                PosY+=Velocidad;
+                PosY += Velocidad;
             }
         }
         public void moveDown(KeyboardEventArgs e) // Movimiento hacia abajo
         {
             if (e.Key == "vbKeyDown")
             {
-                PosY-=Velocidad;
+                PosY -= Velocidad;
             }
         }
         public void moveRight(KeyboardEventArgs e) // Movimiento hacia la derecha
         {
             if (e.Key == "vbKeyRight")
             {
-                PosX+=Velocidad;
+                PosX += Velocidad;
             }
         }
         public void moveLeft(KeyboardEventArgs e) // Movimiento hacia la izquierda
         {
             if (e.Key == "vbKeyLeft")
             {
-                PosX-=Velocidad;
+                PosX -= Velocidad;
             }
         }
 
 
         public void eatApple() // Acciones a realizar cuando la serpiente come una manzana
         {
-            SizeY+=Dificultad; // Aumento su tamaño, dependiendo de la dificultad
+            SizeY += Dificultad; // Aumento su tamaño, dependiendo de la dificultad
         }
-    }  
+    }
 }
