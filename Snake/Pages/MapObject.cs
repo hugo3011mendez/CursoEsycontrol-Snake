@@ -41,7 +41,12 @@ namespace Snake.Pages
             
         }
 
-
-
+        /// <summary> Enumerado para saber qué color debe pintarse en la casilla correspondiente </summary>
+        enum Colores
+        {
+            Vacío = 0, // Para las casillas vacías
+            Snake = 1, // Para la serpiente
+            Apple = 2, // Para la manzana
+        }
     }
 }
