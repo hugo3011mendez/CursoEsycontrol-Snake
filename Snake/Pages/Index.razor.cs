@@ -5,8 +5,6 @@ namespace Snake.Pages
 {
     public partial class Index : ComponentBase
     {
-        private static SnakeObject snake = new(1);
-        private int @_levelSnake = snake.Dificultad;
         private static MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 400px
         private int _mapSize = mapa.Size; // Al inicio de la página establezco el tamaño del contenero al tamaño del mapa
 
@@ -20,9 +18,12 @@ namespace Snake.Pages
             _mapSize = mapa.Size; // Actualizo la variable a ese valor y por lo tanto, se actualizará el tamaño del mapa
         }
 
+
+        private static SnakeObject snake = new(1);
+        private int @_levelSnake = snake.Dificultad;
         private void SnakeOnInvalidSubmit() // En el caso de que el usuario haya introducido un valor inválido
         {
-            snake.Dificultad =_levelSnake; // Vuelvo a establecer el valor del tamaño del mapa al último escrito válido
+            snake.Dificultad = _levelSnake; // Vuelvo a establecer el valor del tamaño del mapa al último escrito válido
         }
 
         private void SnakeOnValidSubmit() // En el caso de que el valor introducido sea uno válido
