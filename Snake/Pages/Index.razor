@@ -5,10 +5,14 @@
 Welcome to the Snake game. <br/>
 
 @* Creo un div con estilos y el mismo tamaño que le damos al mapa *@
-<div style="background-color:grey;width:@(_mapSize)px;height:@(_mapSize)px; display:inline-block; border:5px solid darkred;">
+<div @ref="Mapa" style="background-color:grey;width:@(_mapSize)px;height:@(_mapSize)px; display:inline-block; border:5px solid darkred;">
 </div>
 
-<EditForm Model="@mapa" OnValidSubmit="MapOnValidSubmit" OnInvalidSubmit="MapOnInvalidSubmit"> @* Form simple para que el usuario pueda establecer el tamaño del mapa *@
+@* Botón para que el usuario pueda iniciar o finalizar la partida *@
+<button @ref="BotonIniciar" class="btn btn-primary">@_textoBotonIniciar</button>
+
+@* Form simple para que el usuario pueda establecer el tamaño del mapa *@
+<EditForm Model="@mapa" OnValidSubmit="MapOnValidSubmit" OnInvalidSubmit="MapOnInvalidSubmit">
     <DataAnnotationsValidator></DataAnnotationsValidator> @* Añado el validador del formulario *@
 
     Tamaño del mapa : <InputNumber @bind-Value="@mapa.Size" /> @* Para introducir el valor del tamaño del mapa *@
@@ -18,21 +22,15 @@ Welcome to the Snake game. <br/>
 
 
 @code{
-    private static MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 400px
-    private int @_mapSize = mapa.Size; // Al inicio de la página establezco el tamaño del contenero al tamaño del mapa
+    // Referencias a los elementos del mapa y el botón para iniciar o parar la partida
+    private ElementReference Mapa;
+    private ElementReference BotonIniciar;
 
-    private void MapOnInvalidSubmit() // En el caso de que el usuario haya introducido un valor inválido
+    protected override void OnAfterRender(bool firstRender) // Se ejecuta cada vez que se refresque el DOM
     {
-        mapa.Size = _mapSize; // Vuelvo a establecer el valor del tamaño del mapa al último escrito válido
+        if (firstRender) // La primera vez que se renderice :
+        {
+            BotonIniciar.FocusAsync(); // Establezco el foco en el botón para iniciar la partida
+        }
     }
-
-    private void MapOnValidSubmit() // En el caso de que el valor introducido sea uno válido
-    {
-        _mapSize = mapa.Size; // Actualizo la variable a ese valor y por lo tanto, se actualizará el tamaño del mapa
-    }
-
-
-    private static Random rnd = new(); // Un generador de números aleatorios
-    // Creo una instancia del objeto AppleObject llamando a su constructor y metiéndole parámetros
-    private AppleObject manzana = new(rnd.Next(1, mapa.Size), rnd.Next(1, mapa.Size), "red");
 }
