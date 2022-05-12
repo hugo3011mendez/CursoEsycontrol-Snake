@@ -1,16 +1,17 @@
 ﻿namespace Snake.Pages
 {
-    public class SnakeObject : Props
+    public class SnakeObject : Props // Este objeto representa a la serpiente que el usuario controla en el juego
     {
+        public int Velocidad { get; set; } // Para la velocidad a la que se mueve
+        public int Nivel { get; set; } // Para el nivel de dificultad
+        public int Puntuacion { get; set; } // Indica la puntuación que tiene el jugador
 
-        public int Velocidad { get; set; }
-        public int Nivel { get; set; }
-        public int Puntos { get; set; }
-
-        public SnakeObject(int velocidad,int nivel)
+        public SnakeObject(int velocidad, int nivel) // Constructor con parámetros
         {
             Nivel = nivel;
             Velocidad = velocidad;
+
+            // Posición inicial
             PosX = 0;
             PosY = 0;
 
@@ -22,5 +23,5 @@
 
 
 
-       
+    }  
 }

@@ -6,7 +6,7 @@ namespace Snake.Pages
     public class MapObject
     {
         // Hace referencia a las dimensiones en px del mapa, que será este número tanto para el eje X como el eje Y
-        [Range(100, 1000)] // Establezco un rango para el tamaño del mapa, para que no sea ni muy pequeño ni muy grande
+        [Range(100, 800)] // Establezco un rango para el tamaño del mapa, para que no sea ni muy pequeño ni muy grande
         public int Size { get; set; }
 
         public MapObject(int size) // Constructor, pasándole el tamaño del mapa como parámetro
