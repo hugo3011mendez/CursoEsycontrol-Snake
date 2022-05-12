@@ -23,36 +23,40 @@ namespace Snake.Pages
         }
 
 
-        public void moveUp(KeyboardEventArgs e)
+        // Funciones de movimiento :
+        public void moveUp(KeyboardEventArgs e) // Movimiento hacia arriba
         {
             if (e.Key == "vbKeyUp")
             {
                 PosY++;
             }
         }
-
-        public void moveDown(KeyboardEventArgs e)
+        public void moveDown(KeyboardEventArgs e) // Movimiento hacia abajo
         {
             if (e.Key == "vbKeyDown")
             {
                 PosY--;
             }
         }
-
-        public void moveRight(KeyboardEventArgs e)
+        public void moveRight(KeyboardEventArgs e) // Movimiento hacia la derecha
         {
             if (e.Key == "vbKeyRight")
             {
                 PosX++;
             }
         }
-
-        public void moveLeft(KeyboardEventArgs e)
+        public void moveLeft(KeyboardEventArgs e) // Movimiento hacia la izquierda
         {
             if (e.Key == "vbKeyLeft")
             {
                 PosX--;
             }
+        }
+
+
+        public void eatApple() // Acciones a realizar cuando la serpiente come una manzana
+        {
+            SizeY++; // Aumento su tamaño un poco
         }
     }  
 }
