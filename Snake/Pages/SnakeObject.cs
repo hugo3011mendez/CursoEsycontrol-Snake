@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
+using System.Timers;
 
 namespace Snake.Pages
 {
@@ -7,6 +8,9 @@ namespace Snake.Pages
         public int Velocidad { get; set; } // Para la velocidad a la que se mueve
         public int Dificultad { get; set; } // Para el nivel de de dificultad
         public int Puntuacion { get; set; } // Indica la puntuación que tiene el jugador
+
+        private Timer movementTimer = new(); //Creo el temporizador que repite el movimiento cada 100 milisegundos
+
 
         public SnakeObject(int nivel) // Constructor con parámetros
         {
@@ -20,6 +24,8 @@ namespace Snake.Pages
             // Tamaño por defecto
             SizeX = 4;
             SizeY = 10;
+
+            movementTimer.Start(); //Inicia el temporizador
         }
 
 
