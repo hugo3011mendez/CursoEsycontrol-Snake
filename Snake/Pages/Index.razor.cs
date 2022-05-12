@@ -6,7 +6,7 @@ namespace Snake.Pages
     public partial class Index : ComponentBase
     {
         /// <summary> Mapa donde se jugará la partida </summary>
-        private static MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 400px
+        private static MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 40 casillas
         /// <summary> Variable auxiliar que controla para que la propiedad Size del mapa tenga un valor correcto </summary>
         private int _mapSize = mapa.Size; // Al inicio de la página establezco el tamaño del contenedor al tamaño del mapa
 
@@ -21,6 +21,7 @@ namespace Snake.Pages
         {
             _mapSize = mapa.Size; // Actualizo la variable a ese valor y por lo tanto, se actualizará el tamaño del mapa
         }
+
 
         /// <summary> Serpiente que controlará el jugador </summary>
         private static SnakeObject snake = new(1); // La creo por defecto con el nivel de dificultad 1
