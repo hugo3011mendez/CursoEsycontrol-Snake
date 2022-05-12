@@ -6,7 +6,7 @@ namespace Snake.Pages
     public partial class Index : ComponentBase
     {
         private static MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 400px
-        private int @_mapSize = mapa.Size; // Al inicio de la página establezco el tamaño del contenero al tamaño del mapa
+        private int _mapSize = mapa.Size; // Al inicio de la página establezco el tamaño del contenero al tamaño del mapa
 
         private void MapOnInvalidSubmit() // En el caso de que el usuario haya introducido un valor inválido
         {
@@ -22,7 +22,6 @@ namespace Snake.Pages
         private static Random rnd = new(); // Un generador de números aleatorios
         // Creo una instancia del objeto AppleObject llamando a su constructor y metiéndole parámetros                                           
         private AppleObject manzana = new(rnd.Next(1, mapa.Size), rnd.Next(1, mapa.Size), "red");
-
 
         private string _textoBotonIniciar = "Iniciar partida"; // Referente al texto que se mostrará en el botón
     }
