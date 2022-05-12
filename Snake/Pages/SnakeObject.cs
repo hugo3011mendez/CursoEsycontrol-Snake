@@ -2,13 +2,21 @@
 
 namespace Snake.Pages
 {
-    public class SnakeObject : Props // Este objeto representa a la serpiente que el usuario controla en el juego
+    /// <summary>Representa a la serpiente que el usuario controla en el juego</summary>
+    public class SnakeObject : Props
     {
-        public int Velocidad { get; set; } // Para la velocidad a la que se mueve
-        public int Dificultad { get; set; } // Para el nivel de de dificultad
-        public int Puntuacion { get; set; } // Indica la puntuación que tiene el jugador
+        /// <summary> Representa la velocidad a la que se mueve </summary>
+        public int Velocidad { get; set; }
 
-        public SnakeObject(int nivel) // Constructor con parámetros
+        /// <summary> Representa el nivel de dificultad </summary>
+        public int Dificultad { get; set; }
+
+        /// <summary> Indica la puntuación que tiene el jugador </summary>
+        public int Puntuacion { get; set; } 
+
+        /// <summary> Constructor con parámetros </summary>
+        /// <param name="nivel">Dificultad de la partida</param>
+        public SnakeObject(int nivel)
         {
             Dificultad = nivel;
             Velocidad = Dificultad * 2; // Así la velocidad dependerá del nivel de la partida
@@ -24,28 +32,37 @@ namespace Snake.Pages
 
 
         // Funciones de movimiento :
-        public void moveUp(KeyboardEventArgs e) // Movimiento hacia arriba
+
+        /// <summary> Movimiento hacia arriba </summary>
+        /// <param name="e"></param>
+        public void moveUp(KeyboardEventArgs e)
         {
             if (e.Key == "vbKeyUp")
             {
                 PosY+=Velocidad;
             }
         }
-        public void moveDown(KeyboardEventArgs e) // Movimiento hacia abajo
+        /// <summary> Movimiento hacia abajo </summary>
+        /// <param name="e"></param>
+        public void moveDown(KeyboardEventArgs e)
         {
             if (e.Key == "vbKeyDown")
             {
                 PosY-=Velocidad;
             }
         }
-        public void moveRight(KeyboardEventArgs e) // Movimiento hacia la derecha
+        /// <summary> Movimiento hacia la derecha </summary>
+        /// <param name="e"></param>
+        public void moveRight(KeyboardEventArgs e)
         {
             if (e.Key == "vbKeyRight")
             {
                 PosX+=Velocidad;
             }
         }
-        public void moveLeft(KeyboardEventArgs e) // Movimiento hacia la izquierda
+        /// <summary> Movimiento hacia la izquierda </summary>
+        /// <param name="e"></param>
+        public void moveLeft(KeyboardEventArgs e)
         {
             if (e.Key == "vbKeyLeft")
             {
@@ -53,8 +70,8 @@ namespace Snake.Pages
             }
         }
 
-
-        public void eatApple() // Acciones a realizar cuando la serpiente come una manzana
+        /// <summary> Acciones a realizar cuando la serpiente come una manzana </summary>
+        public void eatApple() // 
         {
             SizeY+=Dificultad; // Aumento su tamaño, dependiendo de la dificultad
         }
