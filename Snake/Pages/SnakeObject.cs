@@ -8,10 +8,10 @@ namespace Snake.Pages
         public int Nivel { get; set; } // Para el nivel de de dificultad
         public int Puntuacion { get; set; } // Indica la puntuación que tiene el jugador
 
-        public SnakeObject(int velocidad, int nivel) // Constructor con parámetros
+        public SnakeObject(int nivel) // Constructor con parámetros
         {
             Nivel = nivel;
-            Velocidad = velocidad;
+            Velocidad = Nivel * 2; // Así la velocidad dependerá del nivel de la partida
 
             // Posición inicial
             PosX = 0;
@@ -28,28 +28,28 @@ namespace Snake.Pages
         {
             if (e.Key == "vbKeyUp")
             {
-                PosY++;
+                PosY+=Velocidad;
             }
         }
         public void moveDown(KeyboardEventArgs e) // Movimiento hacia abajo
         {
             if (e.Key == "vbKeyDown")
             {
-                PosY--;
+                PosY-=Velocidad;
             }
         }
         public void moveRight(KeyboardEventArgs e) // Movimiento hacia la derecha
         {
             if (e.Key == "vbKeyRight")
             {
-                PosX++;
+                PosX+=Velocidad;
             }
         }
         public void moveLeft(KeyboardEventArgs e) // Movimiento hacia la izquierda
         {
             if (e.Key == "vbKeyLeft")
             {
-                PosX--;
+                PosX-=Velocidad;
             }
         }
 
