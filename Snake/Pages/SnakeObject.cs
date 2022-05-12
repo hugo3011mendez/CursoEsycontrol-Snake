@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components.Web;
 using System.Timers;
+using System.ComponentModel.DataAnnotations;
 
 namespace Snake.Pages
 {
@@ -8,8 +9,11 @@ namespace Snake.Pages
     {
         /// <summary> Representa la velocidad a la que se mueve </summary>
         public int Velocidad { get; set; }
+
         /// <summary> Representa el nivel de dificultad </summary>
+        [Range(1,3)]
         public int Dificultad { get; set; }
+
         /// <summary> Indica la puntuación que tiene el jugador </summary>
         public int Puntuacion { get; set; }
 
