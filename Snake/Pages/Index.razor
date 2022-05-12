@@ -13,6 +13,7 @@ Welcome to the Snake game. <br/>
 @* Botón para que el usuario pueda iniciar o finalizar la partida *@
 <button @ref="BotonIniciar" class="btn btn-primary">@_textoBotonIniciar</button>
 
+
 @* Form simple para que el usuario pueda establecer el tamaño del mapa *@
 <EditForm Model="@mapa" OnValidSubmit="MapOnValidSubmit" OnInvalidSubmit="MapOnInvalidSubmit">
     <DataAnnotationsValidator></DataAnnotationsValidator> @* Añado el validador del formulario *@
@@ -23,12 +24,21 @@ Welcome to the Snake game. <br/>
 </EditForm>
 
 
+<EditForm Model="@snake" OnValidSubmit="SnakeOnValidSubmit" OnInvalidSubmit="SnakeOnInvalidSubmit">
+    <DataAnnotationsValidator></DataAnnotationsValidator> @* Añado el validador del formulario *@
+
+    Nivel de dificultad : <InputNumber @bind-Value="@snake.Dificultad" /> @* Para introducir la dificultad *@
+    @* Muestro justo debajo, el mensaje de error si el nivel de dificultad está fuera del rango *@
+    <ValidationMessage For="@(()=>snake.Dificultad)"/>
+</EditForm>
+
+
 @code{
     // Referencias a los elementos del mapa y el botón para iniciar o parar la partida
     private ElementReference Mapa;
     private ElementReference BotonIniciar;
     
-    // Acciones a realizar cada vez que se refresque el DOM y se renderice la página
+    /// <summary> Acciones a realizar cada vez que se refresque el DOM y se renderice la página </summary>
     protected override void OnAfterRender(bool firstRender)
     {
         if (firstRender) // La primera vez que se renderice :
