@@ -17,10 +17,12 @@ namespace Snake.Pages
         /// <summary> Indica la puntuación que tiene el jugador </summary>
         public int Puntuacion { get; set; }
 
+        public bool gameOver = false;
+
         private Timer movementTimer = new(); //Creo el temporizador que repite el movimiento cada 100 milisegundos
 
 
-        public SnakeObject(int nivel) // Constructor con parámetros
+        public SnakeObject(int nivel, int mapSize) // Constructor con parámetros
         {
             Dificultad = nivel;
             Velocidad = Dificultad * 2; // Así la velocidad dependerá del nivel de la partida
@@ -68,10 +70,15 @@ namespace Snake.Pages
         }
 
 
-        //Metodo para detectar la colision de la serpiente con los bordes del mapa o consigo misma
-        public void collide()
+        //Funcion para detectar la colision de la serpiente con los bordes del mapa o consigo misma
+        public bool hasCollide(int mapSize)
         {
-            
+            if(PosX < 0 || PosX > mapSize || PosY < 0 || PosY > mapSize)
+            {
+                gameOver = true;
+            }
+
+            return gameOver;
         }
 
 
