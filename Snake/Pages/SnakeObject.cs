@@ -32,6 +32,9 @@ namespace Snake.Pages
             SizeX = 4;
             SizeY = 10;
 
+            //Cola de la serpiente
+            int[,] tail = new int[size, size];
+
             movementTimer.Start(); //Inicio el temporizador
         }
 
