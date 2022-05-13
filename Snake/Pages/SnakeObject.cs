@@ -16,7 +16,7 @@ namespace Snake.Pages
         /// <summary> Temporizador que repite el movimiento cada 100ms </summary>
         private Timer movementTimer = new();
 
-        int[,] tail;
+        private int[,] tail;
 
 
         /// <summary> Constructor de la serpiente </summary>
