@@ -7,10 +7,6 @@ namespace Snake.Pages
     /// <summary>Representa a la serpiente que el usuario controla en el juego</summary>
     public class SnakeObject : Props
     {
-        /// <summary> Representa el nivel de dificultad </summary>
-        [Range(1,3)]
-        public int Dificultad { get; set; }
-
         /// <summary> Indica la puntuación que tiene el jugador </summary>
         public int Puntuacion { get; set; }
 
@@ -19,6 +15,8 @@ namespace Snake.Pages
 
         /// <summary> Temporizador que repite el movimiento cada 100ms </summary>
         private Timer movementTimer = new();
+
+        int[,] tail;
 
 
         /// <summary> Constructor de la serpiente </summary>
@@ -34,7 +32,7 @@ namespace Snake.Pages
             SizeY = 3;
 
             //Cola de la serpiente
-            int[,] tail = new int[size, size];
+            tail = new int[size, size];
 
             movementTimer.Start(); //Inicio el temporizador
         }
@@ -81,6 +79,17 @@ namespace Snake.Pages
                 GameOver = true;
             }
 
+            for(int i=0; i<mapSize; i++)
+            {
+                for(int j=0; j<mapSize; j++)
+                {
+                    if(tail[i,j] == 1 && PosX==i && PosY==j)
+                    {
+                        GameOver = true;
+                    }
+                }
+            }
+
             return GameOver;
         }
 
@@ -88,7 +97,7 @@ namespace Snake.Pages
         /// <summary> Acciones a realizar cuando la serpiente come una manzana </summary>
         public void eatApple()
         {
-            SizeY+=Dificultad; // Aumento su tamaño, dependiendo de la dificultad
+            SizeY++; // Aumento su tamaño en 1 casilla
         }
     }  
 }
