@@ -38,42 +38,40 @@ namespace Snake.Pages
 
 
         // Funciones de movimiento :
-
-        /// <summary> Movimiento hacia arriba </summary>
+        /// <summary> Movimiento </summary>
         /// <param name="e"></param>
-        public void moveUp(KeyboardEventArgs e)
+        ///
+        public void moveY(KeyboardEventArgs e)
         {
             if (e.Key == "vbKeyUp")
             {
-                PosY+=Velocidad;
+                PosY += Velocidad;
             }
-        }
-        /// <summary> Movimiento hacia abajo </summary>
-        /// <param name="e"></param>
-        public void moveDown(KeyboardEventArgs e)
-        {
+
             if (e.Key == "vbKeyDown")
             {
-                PosY-=Velocidad;
+                PosY -= Velocidad;
             }
         }
-        /// <summary> Movimiento hacia la derecha </summary>
-        /// <param name="e"></param>
-        public void moveRight(KeyboardEventArgs e)
+
+        public void moveX(KeyboardEventArgs e)
         {
             if (e.Key == "vbKeyRight")
             {
-                PosX+=Velocidad;
+                PosX += Velocidad;
             }
-        }
-        /// <summary> Movimiento hacia la izquierda </summary>
-        /// <param name="e"></param>
-        public void moveLeft(KeyboardEventArgs e)
-        {
+
             if (e.Key == "vbKeyLeft")
             {
-                PosX-=Velocidad;
+                PosX -= Velocidad;
             }
+        }
+
+
+        //Metodo para detectar la colision de la serpiente con los bordes del mapa o consigo misma
+        public void collide()
+        {
+            
         }
 
 
