@@ -19,14 +19,14 @@ namespace Snake.Pages
         public MapObject(int size)
         {
             Size = size;
-            Casillas = new string[Size, Size];
+            Casillas = new string[Size-2, Size];
         }
 
         /// <summary> Constructor vacío, por si el usuario no escribe ningún tamaño </summary>
         public MapObject()
         {
             Size = 40;
-            Casillas = new string[Size, Size];
+            Casillas = new string[Size-2, Size];
         }
 
     }
