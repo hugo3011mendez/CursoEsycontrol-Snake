@@ -40,7 +40,7 @@ namespace Snake.Pages
 
 
         // Funciones de movimiento :
-        /// <summary> Movimiento </summary>
+        /// <summary> Movimiento en el eje vertical </summary>
         /// <param name="e"></param>
         ///
         public void moveY(KeyboardEventArgs e)
@@ -56,6 +56,8 @@ namespace Snake.Pages
             }
         }
 
+        /// <summary> Movimiento en el eje horizontal </summary>
+        /// <param name="e"></param>
         public void moveX(KeyboardEventArgs e)
         {
             if (e.Key == "vbKeyRight")
