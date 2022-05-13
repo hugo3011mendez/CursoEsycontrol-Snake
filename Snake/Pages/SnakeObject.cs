@@ -14,7 +14,7 @@ namespace Snake.Pages
         public bool GameOver = false;
 
         /// <summary> Temporizador que repite el movimiento cada 100ms </summary>
-        private Timer movementTimer = new();
+        public Timer movementTimer = new();
 
         private int[,] tail;
 
@@ -24,8 +24,8 @@ namespace Snake.Pages
         public SnakeObject(int size) // Constructor con parámetros
         {
             // Posición inicial, según el tamaño del mapa, pasado como parámetro
-            PosX = size/2;
-            PosY = size/2;
+            PosX = size / 2;
+            PosY = size / 2;
 
             // Tamaño por defecto
             SizeX = 1;
@@ -34,8 +34,6 @@ namespace Snake.Pages
             //Cola de la serpiente
             tail = new int[size, size];
             generateTail(tail, PosX, PosY);
-
-            movementTimer.Start(); //Inicio el temporizador
         }
 
 

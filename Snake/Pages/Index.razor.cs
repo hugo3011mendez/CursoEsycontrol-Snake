@@ -27,7 +27,7 @@ namespace Snake.Pages
 
 
         /// <summary> Serpiente que controlará el jugador </summary>
-        private static SnakeObject snake = new(mapa.Size); // La creo por defecto con el nivel de dificultad 1
+        private static SnakeObject snake = new(mapa.Size);
 
 
         private static Random rnd = new(); // Un generador de números aleatorios
@@ -38,6 +38,7 @@ namespace Snake.Pages
 
         private void startGame(SnakeObject snake, AppleObject manzana)
         {
+            snake.movementTimer.Start(); //Inicio el temporizador
 
         }
     }
