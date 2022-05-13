@@ -20,6 +20,7 @@ namespace Snake.Pages
         private void MapOnValidSubmit()
         {
             _mapSize = mapa.Size; // Actualizo la variable a ese valor y por lo tanto, se actualizará el tamaño del mapa
+            mapa.Casillas = new string[mapa.Size, mapa.Size]; // Actualizo el array de casillas
         }
 
 
