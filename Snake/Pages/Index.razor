@@ -8,7 +8,7 @@ Welcome to the Snake game.
 
 @* Creo un div con estilos y el mismo tamaño que le damos al mapa *@
 <div @ref="Mapa" style="background-color:grey;width:@(_mapSize*10)px;height:@(_mapSize*10)px; display:block; border:5px solid darkred;">
-    @for (var i = 0; i < mapa.Casillas.GetLength(0)-2; i++)
+    @for (var i = 0; i < mapa.Casillas.GetLength(0); i++)
     {
         for (var j = 0; j < mapa.Casillas.GetLength(1); j++)
        {
@@ -25,7 +25,7 @@ Welcome to the Snake game.
                 _colorCasilla = "transparent";
             }
 
-            <div style="width:10px;height:10px;float:left;margin:0px;padding:0px;background-color:@_colorCasilla"></div>
+            <div style="width:10px;height:10px;float:left;margin:0px;padding:0px;background-color:@_colorCasilla;border:1px solid yellow"></div>
        }
     }
 </div>
