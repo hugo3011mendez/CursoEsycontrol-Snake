@@ -13,14 +13,6 @@ namespace Snake.Pages
         /// <summary> Representa las casillas del mapa, que serán divs de 10x10 px </summary>
         public string[,] Casillas { get; set; }
 
-        /// <summary> Enumerado para saber qué color debe pintarse en la casilla correspondiente </summary>
-        public enum Colores
-        {
-            Vacío = 0, // Para las casillas vacías
-            Snake = 1, // Para la serpiente
-            Apple = 2, // Para la manzana
-        }
-
 
         /// <summary> Constructor pasándole su tamaño como parámetro </summary>
         /// <param name="size">Tamaño del mapa, en píxeles</param>

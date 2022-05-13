@@ -12,7 +12,20 @@ Welcome to the Snake game.
     {
         for (var j = 0; j < mapa.Casillas.GetLength(1); j++)
        {
-           <div style="width:10px;height:10px;float:left;margin:0px;padding:0px;"></div>
+           if (manzana.PosX == i && manzana.PosY == j)
+            {
+                _colorCasilla = "red";
+            }
+            else if (snake.PosX == i && snake.PosY == j)
+            {
+                _colorCasilla = "green";
+            }
+            else
+            {
+                _colorCasilla = "transparent";
+            }
+
+            <div style="width:10px;height:10px;float:left;margin:0px;padding:0px;background-color:@_colorCasilla"></div>
        }
     }
 </div>
@@ -30,15 +43,6 @@ Welcome to the Snake game.
     Tamaño del mapa en casillas : <InputNumber @bind-Value="@mapa.Size" /> @* Para introducir el valor del tamaño del mapa *@
     @* Muestro justo debajo, el mensaje de error si el tamaño del mapa está fuera del rango *@
     <ValidationMessage For="@(()=>mapa.Size)"/>
-</EditForm>
-
-
-<EditForm Model="@snake" OnValidSubmit="SnakeOnValidSubmit" OnInvalidSubmit="SnakeOnInvalidSubmit">
-    <DataAnnotationsValidator></DataAnnotationsValidator> @* Añado el validador del formulario *@
-
-    Nivel de dificultad : <InputNumber @bind-Value="@snake.Dificultad" /> @* Para introducir la dificultad *@
-    @* Muestro justo debajo, el mensaje de error si el nivel de dificultad está fuera del rango *@
-    <ValidationMessage For="@(()=>snake.Dificultad)"/>
 </EditForm>
 
 
