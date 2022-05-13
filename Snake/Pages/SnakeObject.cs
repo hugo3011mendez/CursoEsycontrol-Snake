@@ -24,9 +24,6 @@ namespace Snake.Pages
 
         public SnakeObject(int nivel, int size) // Constructor con parámetros
         {
-            Dificultad = nivel;
-            Velocidad = Dificultad * 2; // Así la velocidad dependerá del nivel de la partida
-
             // Posición inicial
             PosX = size/2;
             PosY = size/2;
@@ -47,12 +44,12 @@ namespace Snake.Pages
         {
             if (e.Key == "vbKeyUp")
             {
-                PosY += Velocidad;
+                PosY++;
             }
 
             if (e.Key == "vbKeyDown")
             {
-                PosY -= Velocidad;
+                PosY--;
             }
         }
 
@@ -60,12 +57,12 @@ namespace Snake.Pages
         {
             if (e.Key == "vbKeyRight")
             {
-                PosX += Velocidad;
+                PosX++;
             }
 
             if (e.Key == "vbKeyLeft")
             {
-                PosX -= Velocidad;
+                PosX--;
             }
         }
 
