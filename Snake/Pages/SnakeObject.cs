@@ -33,6 +33,7 @@ namespace Snake.Pages
 
             //Cola de la serpiente
             tail = new int[size, size];
+            generateTail(tail, PosX, PosY);
 
             movementTimer.Start(); //Inicio el temporizador
         }
@@ -93,14 +94,13 @@ namespace Snake.Pages
             return GameOver;
         }
 
-        /*
-        public void generateTail(int [,] tail, int posY)
+        public void generateTail(int [,] tail, int posX, int posY)
         {
-            for(int y=-1; y<-4; y--)
+            for(int x=1; x<4; x++)
             {
-                tail[] = 1;
+                tail[posX-x, posY] = 1;
             }
-        }*/
+        }
 
         /// <summary> Acciones a realizar cuando la serpiente come una manzana </summary>
         public void eatApple()
