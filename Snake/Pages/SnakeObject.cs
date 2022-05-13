@@ -22,7 +22,7 @@ namespace Snake.Pages
         private Timer movementTimer = new(); //Creo el temporizador que repite el movimiento cada 100 milisegundos
 
 
-        public SnakeObject(int nivel, int mapSize) // Constructor con parámetros
+        public SnakeObject(int nivel) // Constructor con parámetros
         {
             Dificultad = nivel;
             Velocidad = Dificultad * 2; // Así la velocidad dependerá del nivel de la partida
