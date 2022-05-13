@@ -94,6 +94,11 @@ namespace Snake.Pages
             return GameOver;
         }
 
+
+        /// <summary> Genera la cola de la serpiente </summary>
+        /// <param name="tail">Array referente a la cola de la serpiente</param>
+        /// <param name="posX">Casilla de la posición horizontal</param>
+        /// <param name="posY">Casilla de la posición vertical</param>
         public void generateTail(int [,] tail, int posX, int posY)
         {
             for(int x=1; x<4; x++)
