@@ -93,6 +93,14 @@ namespace Snake.Pages
             return GameOver;
         }
 
+        /*
+        public void generateTail(int [,] tail, int posY)
+        {
+            for(int y=-1; y<-4; y--)
+            {
+                tail[] = 1;
+            }
+        }*/
 
         /// <summary> Acciones a realizar cuando la serpiente come una manzana </summary>
         public void eatApple()
