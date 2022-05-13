@@ -25,7 +25,7 @@ namespace Snake.Pages
 
 
         /// <summary> Serpiente que controlará el jugador </summary>
-        private static SnakeObject snake = new(1, mapa.Size); // La creo por defecto con el nivel de dificultad 1
+        private static SnakeObject snake = new(mapa.Size); // La creo por defecto con el nivel de dificultad 1
         /// <summary> Variable auxiliar que controla para que la propiedad Dificultad de la serpiente tenga un valor correcto </summary>
         private int _levelSnake = snake.Dificultad;
 

@@ -8,9 +8,9 @@
         /// <summary> Posición inicial en el eje Y del prop, en píxeles </summary>
         public int PosY { get; set; }
 
-        /// <summary> Tamaño del prop en el eje X, en píxeles </summary>
+        /// <summary> Tamaño del prop en el eje X, en casillas del mapa </summary>
         public int SizeX { get; set; } 
-        /// <summary> Tamaño del prop en el eje Y, en píxeles </summary>
+        /// <summary> Tamaño del prop en el eje Y, en casillas del mapa </summary>
         public int SizeY { get; set; }        
     }
 }
