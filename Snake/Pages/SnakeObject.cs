@@ -76,8 +76,9 @@ namespace Snake.Pages
             }
         }
 
+
         /// <summary> Acciones a realizar cuando la serpiente come una manzana </summary>
-        public void eatApple() // 
+        public void eatApple()
         {
             SizeY+=Dificultad; // Aumento su tamaño, dependiendo de la dificultad
         }
