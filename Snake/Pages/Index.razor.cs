@@ -9,6 +9,7 @@ namespace Snake.Pages
         private static MapObject mapa = new(); // Primero el mapa se creará en su tamaño por defecto, 40 casillas
         /// <summary> Variable auxiliar que controla para que la propiedad Size del mapa tenga un valor correcto </summary>
         private int _mapSize = mapa.Size; // Al inicio de la página establezco el tamaño del contenedor al tamaño del mapa
+        private string _colorCasilla = "transparent";
 
         /// <summary> Acciones a realizar en el caso de que el usuario haya introducido un tamaño de mapa inválido </summary>
         private void MapOnInvalidSubmit()
@@ -26,20 +27,6 @@ namespace Snake.Pages
 
         /// <summary> Serpiente que controlará el jugador </summary>
         private static SnakeObject snake = new(mapa.Size); // La creo por defecto con el nivel de dificultad 1
-        /// <summary> Variable auxiliar que controla para que la propiedad Dificultad de la serpiente tenga un valor correcto </summary>
-        private int _levelSnake = snake.Dificultad;
-
-        /// <summary> Acciones a realizar en el caso de que el usuario haya introducido una dificultad inválida </summary>
-        private void SnakeOnInvalidSubmit()
-        {
-            snake.Dificultad = _levelSnake; // Vuelvo a establecer la dificultad al último escrito válido
-        }
-
-        /// <summary> Acciones a realizar en el caso de que el usuario haya introducido una dificultad válida </summary>
-        private void SnakeOnValidSubmit() // En el caso de que el valor introducido sea uno válido
-        {
-            _levelSnake = snake.Dificultad; // Actualizo la variable a ese valor y por lo tanto, se actualizará la dificultad
-        }
 
 
         private static Random rnd = new(); // Un generador de números aleatorios

@@ -7,10 +7,6 @@ namespace Snake.Pages
     /// <summary>Representa a la serpiente que el usuario controla en el juego</summary>
     public class SnakeObject : Props
     {
-        /// <summary> Representa el nivel de dificultad </summary>
-        [Range(1,3)]
-        public int Dificultad { get; set; }
-
         /// <summary> Indica la puntuación que tiene el jugador </summary>
         public int Puntuacion { get; set; }
 
@@ -88,7 +84,7 @@ namespace Snake.Pages
         /// <summary> Acciones a realizar cuando la serpiente come una manzana </summary>
         public void eatApple()
         {
-            SizeY+=Dificultad; // Aumento su tamaño, dependiendo de la dificultad
+            SizeY++; // Aumento su tamaño en 1 casilla
         }
     }  
 }
