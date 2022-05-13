@@ -14,7 +14,7 @@ namespace Snake.Pages
         public string[,] Casillas { get; set; }
 
         /// <summary> Enumerado para saber qué color debe pintarse en la casilla correspondiente </summary>
-        enum Colores
+        public enum Colores
         {
             Vacío = 0, // Para las casillas vacías
             Snake = 1, // Para la serpiente
