@@ -43,7 +43,7 @@ namespace Snake.Pages
 
         private static Random rnd = new(); // Un generador de números aleatorios
         // Creo una instancia del objeto AppleObject llamando a su constructor y metiéndole parámetros                                           
-        private AppleObject manzana = new(rnd.Next(1, mapa.Size), rnd.Next(1, mapa.Size), "red");
+        private AppleObject manzana = new(rnd.Next(1, mapa.Size), rnd.Next(1, mapa.Size));
 
         private string _textoBotonIniciar = "Iniciar partida"; // Referente al texto que se mostrará en el botón
     }
