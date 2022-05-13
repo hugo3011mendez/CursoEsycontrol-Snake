@@ -6,11 +6,16 @@ namespace Snake.Pages
     /// Hereda de Props e implementa la interfaz IDisposable</summary>
     public class AppleObject : Props, IDisposable 
     {
+        /// <summary>Referente al color de la manzana, que lo aplicaremos via CSS</summary>
+        
+        
+
         /// <summary>Constructor con su posición y su color como parámetros</summary>
         public AppleObject(int x, int y)
         {
             PosX = x;
             PosY = y;
+            
 
             // Se le establece un tamaño por defecto, las manzanas siempre serán del mismo tamaño
             SizeX = 5;
@@ -32,5 +37,6 @@ namespace Snake.Pages
 
 
         }
+
     }
 }

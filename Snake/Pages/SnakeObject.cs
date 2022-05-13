@@ -17,17 +17,19 @@ namespace Snake.Pages
         /// <summary> Indica la puntuación que tiene el jugador </summary>
         public int Puntuacion { get; set; }
 
+        public bool gameOver = false;
+
         private Timer movementTimer = new(); //Creo el temporizador que repite el movimiento cada 100 milisegundos
 
 
-        public SnakeObject(int nivel) // Constructor con parámetros
+        public SnakeObject(int nivel, int size) // Constructor con parámetros
         {
             Dificultad = nivel;
             Velocidad = Dificultad * 2; // Así la velocidad dependerá del nivel de la partida
 
             // Posición inicial
-            PosX = 0;
-            PosY = 0;
+            PosX = size/2;
+            PosY = size/2;
 
             // Tamaño por defecto
             SizeX = 4;
@@ -38,42 +40,47 @@ namespace Snake.Pages
 
 
         // Funciones de movimiento :
-
-        /// <summary> Movimiento hacia arriba </summary>
+        /// <summary> Movimiento en el eje vertical </summary>
         /// <param name="e"></param>
-        public void moveUp(KeyboardEventArgs e)
+        ///
+        public void moveY(KeyboardEventArgs e)
         {
             if (e.Key == "vbKeyUp")
             {
-                PosY+=Velocidad;
+                PosY += Velocidad;
             }
-        }
-        /// <summary> Movimiento hacia abajo </summary>
-        /// <param name="e"></param>
-        public void moveDown(KeyboardEventArgs e)
-        {
+
             if (e.Key == "vbKeyDown")
             {
-                PosY-=Velocidad;
+                PosY -= Velocidad;
             }
         }
-        /// <summary> Movimiento hacia la derecha </summary>
+
+        /// <summary> Movimiento en el eje horizontal </summary>
         /// <param name="e"></param>
-        public void moveRight(KeyboardEventArgs e)
+        public void moveX(KeyboardEventArgs e)
         {
             if (e.Key == "vbKeyRight")
             {
-                PosX+=Velocidad;
+                PosX += Velocidad;
             }
-        }
-        /// <summary> Movimiento hacia la izquierda </summary>
-        /// <param name="e"></param>
-        public void moveLeft(KeyboardEventArgs e)
-        {
+
             if (e.Key == "vbKeyLeft")
             {
-                PosX-=Velocidad;
+                PosX -= Velocidad;
             }
+        }
+
+
+        //Funcion para detectar la colision de la serpiente con los bordes del mapa o consigo misma
+        public bool hasCollide(int mapSize)
+        {
+            if(PosX < 0 || PosX > mapSize || PosY < 0 || PosY > mapSize)
+            {
+                gameOver = true;
+            }
+
+            return gameOver;
         }
 
 
