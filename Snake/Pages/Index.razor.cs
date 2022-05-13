@@ -24,19 +24,15 @@ namespace Snake.Pages
             mapa.Casillas = new string[mapa.Size, mapa.Size]; // Actualizo el array de casillas
         }
 
+
         /// <summary> Serpiente que controlará el jugador </summary>
-        private SnakeObject snake = new(mapa.Size); // La creo por defecto con el nivel de dificultad 1
+        private static SnakeObject snake = new(mapa.Size); // La creo por defecto con el nivel de dificultad 1
 
 
         private static Random rnd = new(); // Un generador de números aleatorios
         // Creo una instancia del objeto AppleObject llamando a su constructor y metiéndole parámetros                                           
-        private AppleObject manzana = new(rnd.Next(1, mapa.Size), rnd.Next(1, mapa.Size));
+        private AppleObject manzana = new(rnd.Next(0, mapa.Size), rnd.Next(0, mapa.Size));
 
         private string _textoBotonIniciar = "Iniciar partida"; // Referente al texto que se mostrará en el botón
-
-        private void startGame(SnakeObject snake, AppleObject manzana)
-        {
-
-        }
     }
 }
